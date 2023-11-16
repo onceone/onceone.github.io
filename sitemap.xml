@@ -158,6 +158,13 @@
 
   
   <url>
+    <loc>http://hutalk.top/categories/js%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2023-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://hutalk.top/categories/js%E9%80%86%E5%90%91/</loc>
     <lastmod>2023-11-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -172,7 +179,7 @@
   </url>
   
   <url>
-    <loc>http://hutalk.top/categories/js%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://hutalk.top/categories/js%E9%80%86%E5%90%91/%E6%A1%88%E4%BE%8B/</loc>
     <lastmod>2023-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -180,13 +187,6 @@
   
   <url>
     <loc>http://hutalk.top/categories/hexo/%E5%8F%91%E5%B8%83/</loc>
-    <lastmod>2023-11-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://hutalk.top/categories/js%E9%80%86%E5%90%91/%E6%A1%88%E4%BE%8B/</loc>
     <lastmod>2023-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

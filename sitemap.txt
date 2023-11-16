@@ -16,9 +16,9 @@ http://hutalk.top/tags/js%E9%80%86%E5%90%91/
 http://hutalk.top/tags/hexo/
 http://hutalk.top/tags/js%E5%9F%BA%E7%A1%80/
 http://hutalk.top/tags/typora/
+http://hutalk.top/categories/js%E5%9F%BA%E7%A1%80/
 http://hutalk.top/categories/js%E9%80%86%E5%90%91/
 http://hutalk.top/categories/hexo/
-http://hutalk.top/categories/js%E5%9F%BA%E7%A1%80/
-http://hutalk.top/categories/hexo/%E5%8F%91%E5%B8%83/
 http://hutalk.top/categories/js%E9%80%86%E5%90%91/%E6%A1%88%E4%BE%8B/
+http://hutalk.top/categories/hexo/%E5%8F%91%E5%B8%83/
 http://hutalk.top/categories/typora/
