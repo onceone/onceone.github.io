@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>正向运动学</title>
+      <link href="/2026/08/16/%E6%AD%A3%E5%90%91%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
+      <url>/2026/08/16/%E6%AD%A3%E5%90%91%E8%BF%90%E5%8A%A8%E5%AD%A6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0. 前言"></a>0. 前言</h2><p>正向运动学 是机器人运动学中的第一类问题，也是最基础的部分。<br>简单来说，它的核心任务是：已知机械臂各个关节的角度，计算末端执行器（手爪）在空间中的位置和姿态。<br>这就像是你知道自己肩膀、肘部和手腕各自弯曲了多少度，然后通过计算得出你的手指尖具体在身体的哪个方位。<br>以下从定义、数学原理、通用解法（D-H参数法）和具体案例四个方面详细展开：</p><h2 id="1-定义与输入输出"><a href="#1-定义与输入输出" class="headerlink" title="1. 定义与输入输出"></a>1. 定义与输入输出</h2><p>输入：关节变量向量 $\boldsymbol{q} &#x3D; [q_1, q_2, \dots, q_n]^T$。对于旋转关节，这是角度 ($\theta$)；对于移动关节，这是位移 ($d$)。<br>输出：末端执行器相对于基坐标系的位姿。<br>位置：$(x, y, z)$ 坐标。<br>姿态：末端执行器的方向，通常用旋转矩阵 $R$ 或欧拉角表示。<br>数学映射：</p><p>$$<br>\boldsymbol{x} &#x3D; f(\boldsymbol{q})<br>$$</p><p>其中 $\boldsymbol{x}$ 代表末端位姿。</p><h2 id="2-数学核心：齐次变换矩阵"><a href="#2-数学核心：齐次变换矩阵" class="headerlink" title="2. 数学核心：齐次变换矩阵"></a>2. 数学核心：齐次变换矩阵</h2><p>在正向运动学中，我们不直接计算坐标，而是通过坐标系变换来推导。<br>假设机械臂有 $n$ 个连杆，我们在每个关节处建立一个坐标系。正向运动学的过程就是将所有相邻坐标系的变换矩阵以此相乘：</p><p>$$<br>T_{n}^{0} &#x3D; T_{1}^{0} \cdot T_{2}^{1} \cdot T_{3}^{2} \cdots T_{n}^{n-1}<br>$$</p><p>$T_{n}^{0}$：表示末端坐标系相对于基坐标系的位姿（即我们想求的结果）。<br>$T_{i}^{i-1}$：表示第 $i$ 个坐标系相对于第 $i-1$ 个坐标系的变换。<br>每个变换矩阵 $T$ 通常是一个 $4 \times 4$ 的矩阵：</p><p>$$<br>T &#x3D; \begin{bmatrix} R_{3\times3} &amp; P_{3\times1} \ 0_{1\times3} &amp; 1 \end{bmatrix}<br>$$</p><p>$R$：旋转矩阵，描述姿态。<br>$P$：位置向量，描述位置。</p><h2 id="3-通用解法：D-H-参数法"><a href="#3-通用解法：D-H-参数法" class="headerlink" title="3. 通用解法：D-H 参数法"></a>3. 通用解法：D-H 参数法</h2><h2 id="3-1-概括"><a href="#3-1-概括" class="headerlink" title="3.1 概括"></a>3.1 概括</h2><p>为了系统性地建立上述变换矩阵，最常用的方法是 Denavit-Hartenberg (D-H) 参数法。它为每个连杆定义了4个参数，从而唯一确定相邻坐标系的关系。<br>四个关键参数：<br>连杆长度：沿 $x_i$ 轴测量的 $z_{i-1}$ 和 $z_{i+1}$ 轴之间的距离。<strong>当前轴到下一个轴的距离（当前—下一个，之间的关系）</strong><br>连杆扭转角：$z_{i}$ 轴绕 $x_i$ 轴旋转到 $z_{i+1}$ 轴的角度。<strong>当前轴旋转到下一个轴的角度（当前—下一个，之间的关系）</strong><br>连杆偏距：沿 $z_{i-1}$ 轴测量的 $x_{i-1}$ 和 $x_i$ 轴之间的距离。<strong>上一个x轴距离当前x轴的距离</strong> <strong>（上一个—当前，之间的关系）</strong><br>关节角：$x_{i-1}$ 轴绕 $z_{i-1}$ 轴旋转到 $x_i$ 轴的角度（对于旋转关节，这是变量）。<strong>上一个x轴和当前x轴之间的角度</strong> ,<em><strong>（上一个—当前，之间的关系）</strong></em></p><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260816170039.png" alt="20260816170039"></p><p>注意：</p><pre><code>1. x轴为沿着两个轴之间的垂线方向（当两个轴垂直时，x轴垂直于这两个轴组成的平面，有两种情况，向外向内）2. 连杆扭转角有正负区分，具体为，当前轴转到下个轴的角度，沿着x轴反方向看过去，逆正顺负。</code></pre><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260816165956.png" alt="20260816165956"></p><p>求解步骤：<br>建立坐标系：为每个关节指定 $z$ 轴（沿旋转轴方向）和 $x$ 轴。<br>列表：列出所有关节的 D-H 参数表。<br>推导矩阵：根据参数表写出每个关节的通用变换矩阵 $T_i^{i-1}$。<br>相乘求解：将所有矩阵相乘得到最终的正运动学方程。</p><h2 id="4-案例与推到"><a href="#4-案例与推到" class="headerlink" title="4. 案例与推到"></a>4. 案例与推到</h2><h3 id="4-1-案例"><a href="#4-1-案例" class="headerlink" title="4.1 案例"></a>4.1 案例</h3><p>案例1：</p><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260816171203.png" alt="20260816171203"></p><p>案例2：</p><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830111152.png" alt="20260830111152"><br><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830111229.png" alt="20260830111229"></p><h3 id="4-2-推导"><a href="#4-2-推导" class="headerlink" title="4.2 推导"></a>4.2 推导</h3><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830113742.png" alt="20260830113742"></p><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830113806.png" alt="20260830113806"></p><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830113818.png" alt="20260830113818"></p><h2 id="5-正向运动学的特点与应用"><a href="#5-正向运动学的特点与应用" class="headerlink" title="5. 正向运动学的特点与应用"></a>5. 正向运动学的特点与应用</h2><p>特点：<br>解的唯一性：给定一组关节角，末端位姿是唯一确定的（不像逆向运动学可能有多个解或无解）。<br>计算简单：主要是矩阵乘法和三角函数计算，现代计算机可以实时完成。<br>主要应用场景：<br>机器人仿真：在电脑屏幕上显示机器人的姿态，必须先算出各连杆在空间的位置。<br>运动控制验证：在发送指令给电机前，验证当前目标角度是否会导致碰撞。<br>状态监测：通过电机编码器读取角度，实时计算出末端执行器当前在哪里。<br>总结<br>正向运动学是机器人控制系统的“计算器”。它将机器人的内部状态（关节角）翻译成外部状态（空间坐标），是后续进行轨迹规划、逆向运动学求解以及视觉伺服控制的基础。</p><h2 id="6-标准坐标系"><a href="#6-标准坐标系" class="headerlink" title="6. 标准坐标系"></a>6. 标准坐标系</h2><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830145201.png" alt="20260830145201"></p><p><img src="https://typora-blog-image-1311260816.cos.ap-nanjing.myqcloud.com/imgs/20260830145311.png" alt="20260830145311"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器人 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>机器人坐标系</title>
       <link href="/2026/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%9D%90%E6%A0%87%E7%B3%BB/"/>
       <url>/2026/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%9D%90%E6%A0%87%E7%B3%BB/</url>
