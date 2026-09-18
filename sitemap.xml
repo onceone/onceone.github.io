@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hutalk.top/2026/09/07/%E9%80%9F%E5%BA%A6%E4%B8%8E%E9%9D%99%E5%8A%9B/</loc>
+    
+    <lastmod>2026-09-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hutalk.top/2026/09/02/%E8%BD%A8%E8%BF%B9%E8%A7%84%E5%88%92/</loc>
+    
+    <lastmod>2026-09-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://hutalk.top/2026/08/30/%E9%80%86%E5%90%91%E8%BF%90%E5%8A%A8%E5%AD%A6/</loc>
     
     <lastmod>2026-08-30</lastmod>
@@ -373,7 +391,7 @@
 
   <url>
     <loc>http://hutalk.top/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -381,63 +399,63 @@
   
   <url>
     <loc>http://hutalk.top/tags/js%E9%80%86%E5%90%91/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/hexo/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/typora/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/js%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/js%E9%80%86%E5%90%91-%E8%A1%A5%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/C/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/opencv/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/tags/PCL/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -446,56 +464,56 @@
   
   <url>
     <loc>http://hutalk.top/categories/%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/js/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/C/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/js/js%E9%80%86%E5%90%91/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/js/js%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/C/PCL/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://hutalk.top/categories/C/opencv/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
